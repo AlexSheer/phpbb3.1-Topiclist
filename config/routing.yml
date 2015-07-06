@@ -1,0 +1,3 @@
+sheer_topiclist_controller:
+    pattern: /topiclist
+    defaults: { _controller: sheer.topiclist.controller:main }

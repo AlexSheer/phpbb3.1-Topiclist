@@ -1,0 +1,42 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+
+<h1>{L_ACP_TOPICLIST_SETTINGS}</h1>
+
+<p>{L_ACP_TOPICLIST_SETTINGS_EXPLAIN}</p>
+<form id="list" method="post" action="{U_ACTION}">
+	<!-- IF .forums -->
+		<table cellspacing="1">
+			<col class="row1" /><col class="row1" /><col class="row1" /><col class="row2" />
+		<tbody>
+		<!-- BEGIN forums -->
+			<tr>
+				<td style="width: 5%; text-align: center;">{forums.FOLDER_IMAGE}</td>
+				<td>
+					<!-- IF forums.FORUM_IMAGE --><div style="float: {S_CONTENT_FLOW_BEGIN}; margin-right: 5px;">{forums.FORUM_IMAGE}</div><!-- ENDIF -->
+					<strong><!-- IF forums.S_FORUM_LINK -->{forums.FORUM_NAME}<!-- ELSE -->{forums.FORUM_NAME}<!-- ENDIF --></strong>
+					<!-- IF forums.FORUM_DESCRIPTION --><br /><span>{forums.FORUM_DESCRIPTION}</span><!-- ENDIF -->
+					<!-- IF forums.S_FORUM_POST --><br /><br /><span>{L_TOPICS}: <strong>{forums.FORUM_TOPICS}</strong> / {L_POSTS}: <strong>{forums.FORUM_POSTS}</strong></span><!-- ENDIF -->
+				</td>
+				<td style="text-align: center;"><!-- IF forums.U_DELETE --><input type="checkbox" class="radio" name="mark[]" value="{forums.ID}" /><!-- ENDIF --></td>
+				<!-- IF forums.U_DELETE -->
+				<td style="vertical-align: top; width: 40px; text-align: right; white-space: nowrap;">
+					<a href="{forums.U_GENERATE}">{ICON_SYNC}</a>
+					<!-- IF forums.S_DELETE --><a href="{forums.U_DELETE}">{ICON_DELETE}</a><!-- ELSE -->{ICON_DELETE_DISABLED}<!-- ENDIF -->
+				</td>
+				<!-- ENDIF -->
+				</td>
+			</tr>
+		<!-- END forums -->
+		</tbody>
+		</table>
+	<!-- ENDIF -->
+
+	<fieldset class="quick">
+		<p class="small"><a href="#" onclick="marklist('list', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('list', 'mark', false); return false;">{L_UNMARK_ALL}</a></p>
+		<input class="button2" type="submit" name="delall" value="{L_DELETE_MARKED}" />&nbsp;
+		<input class="button2" type="submit" name="submit" value="{L_CREATE_MARKED}" /><br />
+	</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->

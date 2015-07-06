@@ -1,0 +1,14 @@
+services:
+    sheer.topiclist.controller:
+        class: sheer\topiclist\controller\topiclist
+        arguments:
+            - @dbal.conn
+            - @template
+            - @user
+    sheer.topiclist.listener:
+        class: sheer\topiclist\event\listener
+        arguments:
+            - %core.root_path%
+            - @template
+        tags:
+            - { name: event.listener }

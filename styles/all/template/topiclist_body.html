@@ -1,0 +1,24 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="start_here"></a>
+<div id="page-body">
+
+<h2>{TOPICLIST_TITLE}</h2>
+
+<div class="panel bg1">
+	<div class="inner">
+		<div class="content">
+			<!-- IF TOPICLIST_FILES -->
+				<ul style="font-size: 1.4em;">
+				<!-- BEGIN topiclist_row -->
+					{topiclist_row.TOPICS}
+				<!-- END topiclist_row -->
+				</ul>
+			<!-- ELSE -->
+				<p class="error">{L_TOPICLIST_FILES_NOT_FOUND}</p>
+			<!-- ENDIF -->
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE overall_footer.html -->
