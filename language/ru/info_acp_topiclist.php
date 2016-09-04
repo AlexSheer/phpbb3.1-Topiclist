@@ -36,5 +36,6 @@ $lang = array_merge($lang, array(
 	'ACP_TOPICLIST'						=> 'Topiclist',
 	'ACP_TOPICLIST_SETTINGS'			=> 'Настройки Topiclist',
 	'ACP_TOPICLIST_SETTINGS_EXPLAIN'	=> 'Здесь вы можете настроить Topiclist',
+	'LOCKED'				=> 'Закрыт',	
 	'CREATE_MARKED'						=> 'Сгенерировать для отмеченных'
 ));
